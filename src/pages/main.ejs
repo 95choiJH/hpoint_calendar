@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <%- include('./include/_head.ejs') %>
+</head>
+<body>
+    <div class="wrap">
+        <section class="section kv">
+            <div class="inner">
+                <img src="../assets/images/kv_typo.png" alt="H LIGHT DAY" class="kv-typo">
+                <p class="kv-text">캘린더 출석체크하고 혜택 쿠폰 받자!</p>
+            </div>
+        </section>
+        <section class="section calendar">
+            <div class="inner">
+                <div class="calendar-head">
+                    <span class="month">6월</span>
+                    <p class="calendar-text">'H'를 완성하면 특별한 혜택이!</p>
+                </div>
+                <div class="calendar-body">
+                    <div class="weekdays-wrap">
+                        <span class="weekday">S</span>
+                        <span class="weekday">M</span>
+                        <span class="weekday">T</span>
+                        <span class="weekday">W</span>
+                        <span class="weekday">T</span>
+                        <span class="weekday">F</span>
+                        <span class="weekday">S</span>
+                    </div>
+                    <div class="month-grid"></div>
+                </div>
+                <div class="btn-calendar">
+                    <div class="btn-wrap h-complete">
+                        <button type='button' class="btn">
+                            <span class="percent">
+                                <span class="num">0</span>
+                            </span>
+                            <em class="btn-text">H 완성 보상 받기</em>
+                        </button>
+                        <div class="btn-gradient">
+                            <span class="percent"></span>
+                        </div>
+                    </div>
+                    <div class="btn-wrap attend-complete">
+                        <button type="button" class="btn">
+                            <span class="percent">
+                                <span class="num">0</span>
+                            </span>
+                            <em class="btn-text">출첵 보상 받기</em>
+                        </button>
+                        <div class="btn-gradient">
+                            <span class="percent"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section noti">
+            <div class="inner">
+                <div class="noti-body">
+                    <em class="noti-title">캘린더 출석 알림 받으세요!</em>
+                    <p class="noti-desc">매일 오전 10:00 ~ 12:00 알림</p>
+                </div>
+                <div class="input-noti">
+                    <input type="checkbox" id="switch"/><label for="switch">Toggle</label>
+                </div>
+            </div>
+        </section>
+        <section class="section rewards">
+            <div class="inner">
+
+            </div>
+        </section>
+    </div>
+</body>
+</html>
