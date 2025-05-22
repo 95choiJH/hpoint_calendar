@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>HPOINT 캘린더 이벤트</title>
+    <link rel="stylesheet" href="../assets/lib/swiper/css/swiper-bundle.min.css">
+    <script src="../assets/lib/swiper/js/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="../assets/css/style.css">
     <script src="../assets/js/ui.js"></script>
 </head>
@@ -33,13 +35,16 @@
                         <span class="weekday">F</span>
                         <span class="weekday">S</span>
                     </div>
-                    <div class="month-grid"></div>
+                    <div class="month-grid">
+                        <!-- 캘린더 영역 -->
+                        <!-- 출석체크 활성화: .day-wrap 요소에 active 클래스 추가(구현필요) -->
+                    </div>
                 </div>
                 <div class="btn-calendar">
-                    <div class="btn-wrap h-complete">
+                    <div class="btn-wrap h-complete" data-percent='14'> <!-- H 일부 요소 완성 개수에 따른 data-pecent값(구현필요) / 값 변경 시 프로그레스 및 .num, .percent 값 변화(구현완료) -->
                         <button type='button' class="btn">
                             <span class="percent">
-                                <span class="num">0</span>
+                                <span class="num"></span>
                             </span>
                             <em class="btn-text">H 완성 보상 받기</em>
                         </button>
@@ -47,10 +52,10 @@
                             <span class="percent"></span>
                         </div>
                     </div>
-                    <div class="btn-wrap attend-complete">
+                    <div class="btn-wrap attend-complete" data-percent='63'> <!-- 출석체크 완료 개수에 따른 data-percent값 변동(구현필요) / 값 변경 시 프로그레스 및 .num, .percent 값 변화(구현완료) -->
                         <button type="button" class="btn">
                             <span class="percent">
-                                <span class="num">0</span>
+                                <span class="num"></span>
                             </span>
                             <em class="btn-text">출첵 보상 받기</em>
                         </button>
@@ -68,7 +73,7 @@
                     <p class="noti-desc">매일 오전 10:00 ~ 12:00 알림</p>
                 </div>
                 <div class="input-noti">
-                    <input type="checkbox" id="switch" /><label for="switch">Toggle</label>
+                    <input type="checkbox" id="switch" /><label for="switch">출석 알림 토글 버튼</label>
                 </div>
             </div>
         </section>
@@ -80,19 +85,19 @@
                     </button>
                 </div>
                 <em class="cur-point">4,620 P</em>
-                <div class="sorting-btn-wrap">
-                    <ul class="sorting-btn-list">
-                        <li>
+                <div class="sorting-btn-wrap btn-swiper">
+                    <ul class="sorting-btn-list swiper-wrapper">
+                        <li class="swiper-slide">
                             <button class="btn btn-reward active"> <!-- 버튼 활성화: active 클래스 -->
                                 <span class="btn-text">받은 혜택</span>
                             </button>
                         </li>
-                        <li>
+                        <li class="swiper-slide">
                             <button class="btn btn-reward">
                                 <span class="btn-text">이달의 혜택</span>
                             </button>
                         </li>
-                        <li>
+                        <li class="swiper-slide">
                             <button class="btn btn-reward">
                                 <span class="btn-text">지난 혜택</span>
                             </button>
@@ -173,5 +178,18 @@
         </section>
     </div>
 </body>
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <strong class="me-auto">Bootstrap</strong>
+            <small>11 mins ago</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            Hello, world! This is a toast message.
+        </div>
+    </div>
+</div>
 
 </html>

@@ -96,13 +96,20 @@
                                 background-image: url('../images/icon_H_disable.png');
                                 background-size: 100%;
                             }
+                            &.enable::after {
+                                background-image: url('../images/icon_H_enable.png');
+                            }
                             &[class*='h-'] {
                                 &::after {
                                     width: 4.2rem;
                                     height: 4.4rem;
                                     margin-bottom: 0;
                                     background-image: url('../images/icon_gift_disable.png');
-                                    
+                                    transition: .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                                }
+                                &.enable::after {
+                                    background-image: url('../images/icon_gift_enable.png');
+                                    transform: scale(1.2);
                                 }
                             }
                             &.h-top {
@@ -218,7 +225,7 @@
                         .btn-gradient {
                             position: absolute;
                             background-image: linear-gradient(90deg, #613FFE 0%, #2B7BF4 100%);
-                            clip-path: polygon(0 0, 50% 0%, 50% 100%, 0% 100%);
+                            clip-path: polygon(0 0, 0% 0%, 0% 100%, 0% 100%);
                             .percent {
                                 display: inline-flex;
                                 background-color: rgba(255, 255, 255, 0.09);
@@ -226,7 +233,7 @@
                                     background-color: #fff;
                                 }
                                 &::after {
-                                    content: '0';
+                                    content: attr(data-percent);
                                     display: block;
                                     width: 2.4rem;
                                     font-family: "Pretendard", sans-serif;
@@ -275,7 +282,7 @@
                                     background-color: #fff;
                                 }
                                 &::after {
-                                    content: '0';
+                                    content: attr(data-percent);
                                     display: block;
                                     width: 2.4rem;
                                     font-family: "Pretendard", sans-serif;
@@ -422,8 +429,8 @@
                 .sorting-btn-list {
                     display: flex;
                     align-items: center;
-                    gap: 1rem;
                     >li {
+                        width: auto;
                         .btn {
                             padding: .9rem 1.5rem;
                             background-color: #fff;

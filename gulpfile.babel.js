@@ -23,6 +23,7 @@ const SRC_PATH = {
         SAMPLE: './src/assets/sample',
         SCSS: './src/assets/scss',
         JS: './src/assets/js',
+        LIB: './src/assets/lib',
     },
     EJS: './src/pages'
 },
@@ -34,6 +35,7 @@ const SRC_PATH = {
             SAMPLE: './dist/assets/sample',
             CSS: './dist/assets/css',
             JS: './dist/assets/js',
+            LIB: './dist/assets/lib',
         }
     },
     // 옵션
@@ -91,6 +93,12 @@ gulp.task('js', () => {
         .pipe(gulp.dest(DEST_PATH.ASSETS.JS))
         .pipe(browserSync.stream())
 })
+gulp.task('lib', () => {
+    return gulp
+        .src(SRC_PATH.ASSETS.LIB + '/**/*.+(js|css)')
+        .pipe(gulp.dest(DEST_PATH.ASSETS.LIB))
+        .pipe(browserSync.stream())
+})
 
 gulp.task('svg', () => {
     return gulp
@@ -130,6 +138,7 @@ gulp.task('watch', function () {
     gulp.watch(SRC_PATH.EJS + '/**/*.ejs', gulp.series('ejs'))
     gulp.watch(SRC_PATH.ASSETS.SCSS + '/**/*.scss', gulp.series('scss:compile'))
     gulp.watch(SRC_PATH.ASSETS.JS + '/**/*.js', gulp.series('js'))
+    gulp.watch(SRC_PATH.ASSETS.LIB + '/**/*.+(js|css)', gulp.series('lib'))
     gulp.watch(SRC_PATH.ASSETS.IMAGES + '/**/*.+(png|jpg|jpeg|gif|ico)', gulp.series('images'))
     gulp.watch(SRC_PATH.ASSETS.IMAGES + '/**/*.svg', gulp.series('svg'))
     gulp.watch(SRC_PATH.ASSETS.FONTS + '/**/*.+(eot|otf|svg|ttf|woff|woff2)', gulp.series('fonts'))
@@ -155,6 +164,7 @@ gulp.task(
         'ejs',
         'scss:compile',
         'js',
+        'lib',
         'images',
         'svg',
         'fonts',
