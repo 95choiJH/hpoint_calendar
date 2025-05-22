@@ -105,7 +105,7 @@
                                     height: 4.4rem;
                                     margin-bottom: 0;
                                     background-image: url('../images/icon_gift_disable.png');
-                                    transition: .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                                    transition: .3s cubic-bezier(0.175, 0.485, 0.32, 1.575);
                                 }
                                 &.enable::after {
                                     background-image: url('../images/icon_gift_enable.png');
@@ -226,6 +226,7 @@
                             position: absolute;
                             background-image: linear-gradient(90deg, #613FFE 0%, #2B7BF4 100%);
                             clip-path: polygon(0 0, 0% 0%, 0% 100%, 0% 100%);
+                            transition: .2s ease;
                             .percent {
                                 display: inline-flex;
                                 background-color: rgba(255, 255, 255, 0.09);
