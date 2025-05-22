@@ -1,5 +1,7 @@
 window.onload = function() {
     calendar();
+    rewardsBtn();
+
     function calendar() {
         const year = 2025;
         const month = 6
@@ -69,5 +71,16 @@ window.onload = function() {
             }
 
         }
+    }
+    function rewardsBtn() {
+        const sortBtn = document.querySelectorAll('.section.rewards .sorting-btn-list .btn')
+        sortBtn.forEach(btn => {
+            btn.addEventListener('click', function() {
+                sortBtn.forEach(btn => {
+                    btn.classList.remove('active');
+                })
+                this.classList.add('active');
+            })
+        })
     }
 }

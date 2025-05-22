@@ -1,6 +1,16 @@
 /* font-family:"HGGGothic" */
 @font-face {
     font-family:"HGGGothic";
+    font-weight:400;
+    font-style:normal;
+    src:url('../fonts/HGGGothicssi/HGGGothicssi-40g.woff2') format('woff2'),
+        url('../fonts/HGGGothicssi/HGGGothicssi-40g.woff') format('woff'),
+        url('../fonts/HGGGothicssi/HGGGothicssi-40g.otf') format('opentype'),
+        url('../fonts/HGGGothicssi/HGGGothicssi-40g.ttf') format("truetype");
+    font-display: swap;
+}
+@font-face {
+    font-family:"HGGGothic";
     font-weight:600;
     font-style:normal;
     src:url('../fonts/HGGGothicssi/HGGGothicssi-60g.woff2') format('woff2'),
