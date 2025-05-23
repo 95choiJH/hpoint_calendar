@@ -7,6 +7,10 @@
     <title>HPOINT 캘린더 이벤트</title>
     <link rel="stylesheet" href="../assets/lib/swiper/css/swiper-bundle.min.css">
     <script src="../assets/lib/swiper/js/swiper-bundle.min.js"></script>
+
+    <link rel="stylesheet" href="../assets/lib/bootstrap/bootstrap.min.css">
+    <script src="../assets/lib/bootstrap/bootstrap.bundle.min.js"></script>
+
     <link rel="stylesheet" href="../assets/css/style.css">
     <script src="../assets/js/ui.js"></script>
 </head>
@@ -37,7 +41,8 @@
                     </div>
                     <div class="month-grid">
                         <!-- 캘린더 영역 -->
-                        <!-- 출석체크 활성화: .day-wrap 요소에 active 클래스 추가(구현필요) -->
+                        <!-- 출석체크 활성화: .day-wrap 요소에 enable 클래스 추가(구현필요) -->
+
                     </div>
                 </div>
                 <div class="btn-calendar">
@@ -178,16 +183,83 @@
         </section>
     </div>
 </body>
-
-<div class="toast-container position-fixed bottom-0 end-0 p-3">
-    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="toast-header">
-            <strong class="me-auto">Bootstrap</strong>
-            <small>11 mins ago</small>
-            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+<div class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true" inert>
+    <div class="inner">
+        <div class="toast-head">
+            <em class="toast-title">
+                <span class="user-name">홍*동</span>님 1만P 당첨!
+            </em>
         </div>
         <div class="toast-body">
-            Hello, world! This is a toast message.
+            <p class="toast-text">뜻밖의 횡재! 이벤트 담당자님,<br>복 받으세요!🙏</p>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-head">
+            <em class="title">축하합니다!</em>
+            <p class="desc">H.LIGHT DAY 참여완료</p>
+        </div>
+        <div class="modal-body">
+            <img src="../assets/images/modal_img1.jpg" alt="플러스포인트 당첨 이미지">
+            <p class="desc">플러스포인트 당첨</p>
+            <div class="notice-wrap">
+                <ul class="bullet-list">
+                    <li>
+                        <p class="bullet-text">본 쿠폰은 10만원 이상 구매 시, 사용 가능합니다.</p>
+                    </li>
+                    <li>
+                        <p class="bullet-text">지급된 혜택은 선물하기/전환/캐시백 등은 불가합니다.</p>
+                    </li>
+                    <li>
+                        <p class="bullet-text">혜택별 사용처/사용기준이 상이하므로, 사용 전 반드시 확인 바랍니다.</p>
+                    </li>
+                    <li>
+                        <p class="bullet-text">지급된 혜택의 세부 내용은 하단의 혜택받기 버튼을 통해 확인 가능합니다.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="btn-wrap">
+          <button type="button" class="close" data-bs-dismiss="modal" data-bs-target="#modal1" aria-label="Close"><span class="btn-text">보상 받기</span></button>
+        </div>
+      </div>
+    </div>
+</div> -->
+
+<div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-head">
+                <em class="title">축하합니다!</em>
+                <p class="desc">이번 달 H를 완성하셨네요<br>하이라이트 혜택을 받아가세요</p>
+            </div>
+            <div class="modal-body">
+                <img src="../assets/images/modal_img2.jpg" alt="H.Point 당첨 이미지">
+                <p class="desc">H.Point 100P 당첨</p>
+                <div class="notice-wrap">
+                    <ul class="bullet-list">
+                        <li>
+                            <p class="bullet-text">본 쿠폰은 10만원 이상 구매 시, 사용 가능합니다.</p>
+                        </li>
+                        <li>
+                            <p class="bullet-text">지급된 혜택은 선물하기/전환/캐시백 등은 불가합니다.</p>
+                        </li>
+                        <li>
+                            <p class="bullet-text">혜택별 사용처/사용기준이 상이하므로, 사용 전 반드시 확인 바랍니다.</p>
+                        </li>
+                        <li>
+                            <p class="bullet-text">지급된 혜택의 세부 내용은 하단의 혜택받기 버튼을 통해 확인 가능합니다.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="btn-wrap">
+                <button type="button" class="close" data-bs-dismiss="modal" data-bs-target="#modal1" aria-label="Close"><span class="btn-text">보상 받기</span></button>
+            </div>
         </div>
     </div>
 </div>
